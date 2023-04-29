@@ -1,38 +1,62 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!--html标签-->
+<!--head标签：可包括title（标题），meta（页面信息），link（外部文件），style（CSS样式），script（JS代码），base-->
 <html lang="en"><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+    <meta charset="utf-8"> <!--语言为英文，编码为utf-8-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!--宽度及缩放-->
+    <link rel="icon" type="image/png" href="./assets/img/favicon.png"> <!--标题中的心形及文字-->
     <title>
-        haoyue_ruochen
+        Haoyue_Ruochen
     </title>
-
-    <meta name="keywords" content="WHY, SRC">
-    <meta name="description" content="WHY BE IN LOVE WITH SRC">
-
+    <!--页面关键字，描述及作者-->
+    <meta name="keywords" content="HY, RC"> 
+    <meta name="description" content="HY BE IN LOVE WITH RC">
+    <meta name="author" content="Rory" /> 
+    <!--引入CSS文件-->
     <link id="pagestyle" href="./assets/css/soft-design-system-pro.min.css?v=1.0.9" rel="stylesheet">
     <link href="./assets/css/calendar.css" rel="stylesheet">
     <link href="./assets/css/modification.css" rel="stylesheet">
+    <!--行内样式，定义放大图片操作，cover表剪切填充，contain表保持长宽比-->
+    <style>
+        .card-img-top {
+            height: var(--height);
+            object-fit: cover;
+        }
+        .image-view {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgb(0, 0, 0, 0.8);
+            z-index: 9999;
+        }
+        .image-view img {
+            max-height: calc(100% - 112px);
+            width: 100%;
+            object-fit: contain;
+        }
+    </style>
 </head>
+<!--body标签-->
 <body class="presentation-page">
-
+<!--header头部标签-->
 <header class="header-2">
-    <div class="page-header min-vh-75 relative">
-        <span class="mask bg-gradient-primary"></span>
-        <div class="container">
+    <div class="page-header min-vh-75 relative"> <!--背景相对大小：*%-->
+        <span class="mask bg-gradient-primary"></span> <!--背景渐变颜色-->
+        <div class="container"> <!--栅格布局-->
             <div class="row">
-                <div class="col-lg-7 text-center mx-auto">
-                    <h1 class="text-white pt-3 mt-n5">❄️ Haoyue ❤️ Ruochen 🌟</h1>
-                    <p class="lead text-white mt-3">Started from Mar 25, 2023.</p>
+                <div class="col-lg-7 text-center mx-auto"> <!--占*列，sm、md、lg、xl分别表小、中、大、超大屏分辨率-->
+                    <h1 class="text-white pt-3 mt-n5"> Haoyue ❄️ Ruochen </h1> <!--标题标签，从h1到h6字号渐小-->
+                    <p class="lead text-white mt-3">Origin of ❤: Mar 25, 2023</p> <!--段落标签，pt和mt调整上下距-->
                 </div>
             </div>
         </div>
-        <div class="position-absolute w-100 z-index-1 bottom-0">
+        <div class="position-absolute w-100 z-index-1 bottom-0"> <!--绝对定位：w表宽度*%，z-index表堆叠顺序，bottom表底部厚度-->
             <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
-                <defs>
+                <defs> <!--定义图形：波浪-->
                     <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
                 </defs>
-                <g class="moving-waves">
+                <g class="moving-waves"> <!--引用定义的图形-->
                     <use xlink:href="#gentle-wave" x="48" y="-1" fill="rgba(255,255,255,0.40"></use>
                     <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.35)"></use>
                     <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.25)"></use>
@@ -44,15 +68,16 @@
         </div>
     </div>
 </header>
+
 <section class="pt-3 pb-4" id="count-stats">
     <div class="container">
         <div class="row">
-            <div class="col-lg-9 z-index-2 border-radius-xl mt-n10 mx-auto py-3 blur shadow-blur">
+            <div class="col-lg-9 z-index-2 border-radius-xl mt-n10 mx-auto py-3 blur shadow-blur"> <!--blur绘制阴影方框-->
                 <div class="row">
-                    <div class="col position-relative">
+                    <div class="col position-relative"> <!--相对位置，mt，py，p调节上下距-->
                         <div class="p-3 text-center">
-                            <h1 class="text-gradient text-primary"> <span id="state1"></span> DAYS</h1>
-                            <h5 class="mt-3">How long have we been in relationship?</h5>
+                            <h1 class="text-gradient text-primary"> <span id="state1"></span> DAYS</h1> <!--文字渐变颜色-->
+                            <h5 class="mt-3">Sweet time in love with you.</h5>
                         </div>
                     </div>
                     </div>
@@ -61,20 +86,9 @@
         </div>
     </div>
 </section>
-<section class="my-5 py-5" id="calendar_photos">
-    <div class="container">
-        <div class="row">
-            <div class="row justify-content-center text-center my-n1">
-                <div class="col-lg-6">
-                    <h2 class="text-primary text-gradient" style="font-size: 3.5rem;">Events Calendar</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-sm-5 mt-3" id="calendar">
-        </div>
-    </div>
 
-    <div class="container mt-sm-5 mt-3" style="padding-top: 1.3rem;">
+<section class="my-1 py-1" id="calendar_photos">
+    <div class="container mt-sm-5 mt-3" style="padding-top: 1rem;"> <!--padding-top表顶部内间距，m调节色块大小，radius表圆角大小，shadow表阴影-->
         <div class="bg-gradient-primary position-relative m-3 border-radius-xl shadow-lg">
             <div class="container pb-lg-8 pb-5 pt-5 postion-relative z-index-2 position-relative">
                 <div class="row">
@@ -90,7 +104,7 @@
                         <p class="text-white" style="font-weight: bold;">第七条 永远爱狗狗</p>
                         <p class="text-white" style="font-weight: bold;">第八条 小狗的工作要自己做，大狗绝不插手</p>
                         <p class="text-white" style="font-weight: bold;">第九条 手册解释权在小狗。It's so ordered!</p>
-                        <h3 class="text-white" style="text-align: right;">小狗，大狗</h3>
+                        <p class="text-white" style="font-weight: bold; text-align: right;"><i>小狗，大狗</i></p>
                     </div>
                 </div>
             </div>
@@ -101,9 +115,9 @@
         <div class="col" style="border-radius: 10rem">
             <div class="card shadow-lg mb-5">
                 <div class="card-header bg-gradient-primary p-5 position-relative">
-                    <h3 class="text-white mb-0">Episode</h3>
-                    <p class="text-white opacity-8 mb-4">Last modified: Mar 26 2023</p>
-                    <div class="position-absolute w-100 z-index-1 bottom-0 ms-n5">
+                    <h3 class="text-white mb-0">Episodes</h3>
+                    <p class="text-white opacity-8 mb-4">Modified: Apr, 2023</p>
+                    <div class="position-absolute w-100 z-index-1 bottom-0 ms-n5"> <!--设置波浪-->
                         <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                              viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto"
                              style="height:7vh;min-height:50px;">
@@ -123,76 +137,110 @@
                     </div>
                 </div>
                 <div class="card-body p-5" id="truth_words">
-                    <h3 class="mt-5 mb-3">今夜月色真美❤️</h3>
-                    <p>深蓝的天空中挂着一轮金黄的圆月，下面是海边的沙地，都种着一望无际的碧绿的西瓜。其间有一个十一二岁的少年，项带银圈，手捏一柄钢叉，向一匹猹尽力的刺去。
-                        那猹却将身一扭，反从他的胯下逃走了。</p>
-                    <p>“现在太冷，你夏天到我们这里来。我们日里到海边捡贝壳去，红的绿的都有，鬼见怕也有，观音手也有。晚上我和爹管西瓜去，你也去。”</p>
-                    <p>“管贼么。”</p>
-                    <p>“不是。走路的人口渴了摘一个瓜吃，我们这里是不算偷的。要管的是獾（huān）猪，刺猬，猹。月亮地下，你听，啦啦的响了，猹在咬瓜了。你便捏了胡叉，轻轻地走去……”</p>
-                    <p>我那时并不知道这所谓猹的是怎么一件东西——便是也不知道——只是无端地觉得状如小狗而很凶猛。</p>
-                    <p>“他不咬人么。”</p>
-                    <p>“有胡叉呢。走到了，看见猹了，你便刺。这畜（chù）生很伶俐，倒向你奔来，反从胯下窜了。它的皮毛是油一般的滑……”</p>               
-                    <p>— — — — — — — 我是分割线 — — — — — — —</p>
-                    <p>“你们在干什么呀？可以加我一个吗？” 2022.4.23</p>
-                    <p>“帽子里有什么呀？让我看看呢？” 2022.4.23</p>
-                    <p>“做成木制柜子，特别能装，你看，这是门把手。” 2022.4.24</p>
+                    <h3 class="mt-1 mb-3">今夜月色真美❤️</h3>
+                    <p class="text-dark">深蓝的天空中挂着一轮金黄的圆月，下面是海边的沙地，都种着一望无际的碧绿的西瓜。
+                        其间有一个十一二岁的少年，项带银圈，手捏一柄钢叉，向一匹猹尽力的刺去。那猹却将身一扭，反从他的胯下逃走了。
+                        <br/>“现在太冷，你夏天到我们这里来。我们日里到海边捡贝壳去，红的绿的都有，鬼见怕也有，观音手也有。
+                        晚上我和爹管西瓜去，你也去。”
+                        <br/>“管贼么。”
+                        <br/>“不是。走路的人口渴了摘一个瓜吃，我们这里是不算偷的。要管的是獾猪，刺猬，猹。
+                        月亮地下，你听，啦啦的响了，猹在咬瓜了。你便捏了胡叉，轻轻地走去……”
+                        <br/>我那时并不知道这所谓猹的是怎么一件东西——便是也不知道——只是无端地觉得状如小狗而很凶猛。
+                        <br/>“他不咬人么。”
+                        <br/>“有胡叉呢。走到了，看见猹了，你便刺。这畜生很伶俐，倒向你奔来，反从胯下窜了。它的皮毛是油一般的滑……”
+						<br/>2023.3.24
+                    </p> <!--p表文字分段，br表文字换行-->
+                    <hr style="color: pink;"> <!--水平线-->
+                    <p class="text-dark">“你们在干什么呀？可以加我一个吗？” 2023.4.23</p>
+                    <hr style="color: pink;">
+                    <p class="text-dark">“帽子里有什么呀？让我看看呢？” 2023.4.23</p>
+                    <hr style="color: pink;">
+                    <p class="text-dark">“木制柜子能装，你看，这是门把手。” 2023.4.24</p>
                 </div>
             </div>
+        </div>
+    </div>
+
+	<div class="container">
+        <div class="row">
+            <div class="row justify-content-center text-center my-n1">
+                <div class="col-lg-6">
+                    <h2 class="text-primary text-gradient" style="font-size: 3.5rem;">Love Calendar</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-sm-5 mt-3" id="calendar">
         </div>
     </div>
 
     <div class="container mt-sm-5 mt-3">
         <div class="row pt-lg-6">
             <div class="col-lg-3">
-                <div class="position-sticky pb-lg-5 pb-3 mt-lg-0 mt-5 ps-2" style="top: 100px">
+                <div class="position-sticky pb-lg-5 pb-3 mt-lg-0 mt-5 ps-2" style="top: 100px"> <!--top调节冻结高度-->
                     <h3>Records</h3>
-                    <h6 class="text-secondary font-weight-normal pe-3">Some photos can be seen here!</h6>
+                    <h6 class="text-secondary font-weight-normal pe-3">Some meaningful photos.</h6>
                 </div>
             </div>
             <div class="col-lg-9">
                 <div class="row mt-3">
-                    <div class="col-md-4">
-                        <a href="">
-                            <div class="card shadow-lg move-on-hover max-height-200">
-                                <img class="w-100 m-auto" src="./assets/img/WinterOlympics.jpg" alt="">
+                    <div class="col-md-5"> <!--控制占列，即图像宽--> 
+                            <div class="card shadow-lg move-on-hover"> <!--max-width-300 max-height-160写入class中可以控制最大宽度和高度-->
+							<!--绑定点击操作onclick，调用封装函数-->
+                                <img class="w-100 m-auto" src="./assets/img/WinterOlympics.jpg"
+                                    alt="WinterOlympics" loading="lazy" onclick="imageView('./assets/img/WinterOlympics.jpg')">
                             </div>
                             <div class="mt-2 ms-2">
                                 <h6 class="mb-0">01.23.2022</h6>
-                                <p class="text-secondary text-sm">In Tsinghua</p>
+                                <p class="text-secondary text-sm">Beijing Winter Olympics</p>
                             </div>
-                            <div class="card shadow-lg move-on-hover max-height-200">
-                                <img class="w-100 m-auto" src="./assets/img/Dogs.jpg" alt="">
+                            <!--也可以用等比例放缩方式：img style="object-fit: contain; height: 200px; background-color: red;"-->
+                            <div class="card shadow-lg move-on-hover"> <!--鼠标滑过卡片上浮效果，最大高度-->
+                                <img class="w-100 m-auto" src="./assets/img/Dogs.jpg" 
+                                    alt="Dogs" loading="lazy" onclick="imageView('./assets/img/Dogs.jpg')">
                             </div>
                             <div class="mt-2 ms-2">
                                 <h6 class="mb-0">03.25.2023</h6>
-                                <p class="text-secondary text-sm">In Tsinghua</p>
+                                <p class="text-secondary text-sm">In Love</p>
                             </div>
-                            <div class="card shadow-lg move-on-hover max-height-200">
-                                <img class="w-100 m-auto" src="./assets/img/Tie.jpg" alt="">
+                            <div class="card shadow-lg move-on-hover">
+                                <img class="w-100 m-auto" src="./assets/img/Tie.jpg" 
+                                    alt="Tie" loading="lazy" onclick="imageView('./assets/img/Tie.jpg')">
                             </div>
                             <div class="mt-2 ms-2">
                                 <h6 class="mb-0">03.28.2023</h6>
-                                <p class="text-secondary text-sm">In Tsinghua</p>
+                                <p class="text-secondary text-sm">Tsinghua-Rohm</p>
                             </div>
-                            <div class="card shadow-lg move-on-hover max-height-200">
-                                <img class="w-100 m-auto" src="./assets/img/GreenTea.jpg" alt="">
+                            <div class="card shadow-lg move-on-hover">
+                                <img class="w-100 m-auto" src="./assets/img/GreenTea.jpg" 
+                                    alt="GreenTea" loading="lazy" onclick="imageView('./assets/img/GreenTea.jpg')">
                             </div>
                             <div class="mt-2 ms-2">
                                 <h6 class="mb-0">04.08.2023</h6>
-                                <p class="text-secondary text-sm">In Yonghe Temple</p>
+                                <p class="text-secondary text-sm">Yonghe Temple</p>
                             </div>
-                            <div class="card shadow-lg move-on-hover max-height-200">
-                                <img class="w-100 m-auto" src="./assets/img/GroupShot2.jpg" alt="">
+							<div class="card shadow-lg move-on-hover">
+                                <img class="w-100 m-auto" src="./assets/img/GroupShot1.jpg" 
+                                    alt="GroupShot1" loading="lazy" onclick="imageView('./assets/img/GroupShot1.jpg')">
                             </div>
                             <div class="mt-2 ms-2">
-                                <h6 class="mb-0">04.22.2023</h6> 
-                                <p class="text-secondary text-sm">In Beihai Park</p>
+                                <h6 class="mb-0">04.19.2023</h6>
+                                <p class="text-secondary text-sm">Peking University</p>
                             </div>
-                        </a>
+                            <div class="card shadow-lg move-on-hover">
+                                <img class="w-100 m-auto" src="./assets/img/GroupShot2.jpg" 
+                                    alt="GroupShot2" loading="lazy" onclick="imageView('./assets/img/GroupShot2.jpg')">
+                            </div>
+                            <div class="mt-2 ms-2">
+                                <h6 class="mb-0">04.22.2023</h6>
+                                <p class="text-secondary text-sm">Beihai Park</p>
+                            </div>
                     </div>
                     
                     </div>
                 </div>
+            </div>
+            <div class="d-none image-view" onclick="bindCloseImageView()"> <!--点击大图调用封装函数；d-none表默认隐藏，即不放大-->
+                <img class="position-absolute top-50 start-50 translate-middle" src="" alt="全屏显示"> <!--大图的位置-->>
             </div>
         </div>
 </section>
@@ -219,8 +267,23 @@
 
     gtag('config', 'UA-46172202-12');
 </script>
-<script>
+
+<script src="./assets/js/jquery-3.6.0.min.js" type="text/javascript"></script> <!--引入该文件，以使用"$"-->
+<!--定义放大和缩小图片函数，remove和add分别去除和加上'd-done'隐藏效果"-->
+<script type="text/javascript">
+    function imageView(src) {
+        $('.image-view img').attr('src', src);
+        $('.image-view').removeClass('d-none');
+        /*console.log("Enlarge");*/
+        }
+    function bindCloseImageView() {
+        /*$('.image-view').click(function () {
+        console.log("Reduce");
+        })*/
+        $('.image-view').addClass('d-none'); /*用"$"选择元素*/
+    }
 </script>
+
 <script type="text/javascript">
     // countto
     const date1 = new Date("03/25/2023");
@@ -289,7 +352,7 @@
                     start: '2023-04-01'
                 },
                 {
-                    title: '第1次逛公园',
+                    title: '求佛',
                     start: '2023-04-08'
                 },
                 {
@@ -310,5 +373,5 @@
     });
 </script>
 
-
-</body></html>
+</body>
+</html>
