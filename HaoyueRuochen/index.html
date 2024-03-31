@@ -180,24 +180,35 @@
         </div>
     </div>
 
-	<div class="container">
-        <div class="row">
-            <div class="row justify-content-center text-center my-n1">
-                <div class="col-lg-6">
-			<h1 style="font-size: 3rem; color: #c299cd;">Love Calendar</h1>
-                </div>
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Calendar</title>
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="row justify-content-center text-center my-n1">
+            <div class="col-lg-6">
+                <h1 style="font-size: 3rem; color: #c299cd;">Love Calendar</h1>
             </div>
         </div>
-        <div class="row mt-sm-4 mt-3" id="calendar">
-        </div>
     </div>
+    <div class="row mt-sm-4 mt-3" id="calendar">
+    </div>
+</div>
 
-    // calendar
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.min.js"></script>
+<script>
     document.addEventListener('DOMContentLoaded', function () {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
             plugins: ['interaction', 'dayGrid'],
-            defaultDate: '2024-01',
+            defaultDate: '2024-01-01', // 默认日期改为 2024 年 1 月 1 日
             events: [
                 {
                     title: '初识',
@@ -211,7 +222,7 @@
                     title: '过年',
                     start: '2022-01-31'
                 },
-		{
+                {
                     title: '邀请苏苏一起拍毕业照',
                     start: '2022-05-15'
                 },
@@ -259,163 +270,163 @@
                     title: '北海划船',
                     start: '2023-04-22'
                 },
-		{
+                {
                     title: '第1次旅行',
                     start: '2023-05-01'
                 },
-		{
+                {
                     title: '茶茶生日❤',
                     start: '2023-05-11'
                 },
-		{
+                {
                     title: '博士答辩',
                     start: '2023-05-23'
                 },
-		{
+                {
                     title: '德云社相声',
                     start: '2023-05-25'
                 },
-		{
+                {
                     title: '五月天演唱会',
                     start: '2023-05-30'
                 },
-		{
+                {
                     title: '见妈妈',
                     start: '2023-06-23'
                 },
-		{
+                {
                     title: '茶茶毕业典礼',
                     start: '2023-06-24'
                 },
-		{
+                {
                     title: '大狗毕业典礼',
                     start: '2023-06-25'
                 },
-		{
+                {
                     title: '一起搬家',
                     start: '2023-07-24'
                 },
-		{
+                {
                     title: '一起装修',
                     start: '2023-07-25'
                 },
-		{
+                {
                     title: '大狗入职',
                     start: '2023-07-27'
                 },
-		{
+                {
                     title: '小狗拔牙啦',
                     start: '2023-08-14'
                 },
-		{
+                {
                     title: '小狗又拔牙啦',
                     start: '2023-08-27'
                 },
-		{
+                {
                     title: '小狗去伦敦',
                     start: '2023-09-14'
                 },
-		{
+                {
                     title: '小狗过教师节',
                     start: '2023-09-09'
                 },
-		{
+                {
                     title: '剑桥小狗',
                     start: '2023-09-25'
                 },
-		{
+                {
                     title: '想狗狗的第一个月',
                     start: '2023-09-30'
                 },
-		{
+                {
                     title: '一起学法语',
                     start: '2023-10-16'
                 },
-		{
+                {
                     title: '牛津小狗',
                     start: '2023-10-18'
                 },
-		{
+                {
                     title: '小狗白崖渡劫',
                     start: '2023-10-29'
                 },
-	    	{
+                {
                     title: '大狗党校培训',
                     start: '2023-10-30'
                 },
-		{
+                {
                     title: '大狗第一笔工资',
                     start: '2023-10-31'
                 },
-	    	{
+                {
                     title: '赶集小狗',
                     start: '2023-11-11'
                 },
-		{
+                {
                     title: '大狗新入办培训',
                     start: '2023-11-13'
                 },
-		{
+                {
                     title: '天使灯小狗',
                     start: '2023-11-17'
                 },
-		{
+                {
                     title: '小狗第一次滑冰',
                     start: '2023-11-18'
                 },
-		{
+                {
                     title: '巴斯小狗',
                     start: '2023-11-19'
                 },
-		{
+                {
                     title: '小狗回国',
                     start: '2023-12-06'
                 },
-		{
+                {
                     title: '北体滑冰',
                     start: '2023-12-11'
                 },
-		{
+                {
                     title: '见爸妈',
                     start: '2023-12-16'
                 },
-		{
+                {
                     title: '看校歌赛',
                     start: '2023-12-17'
                 },
-		{
+                {
                     title: '大狗体检',
                     start: '2023-12-19'
                 },
-		{
+                {
                     title: '第一次戴情侣对戒',
                     start: '2023-01-07'
                 },
-		{
+                {
                     title: '逛玉渊潭',
                     start: '2023-01-09'
                 },
-		{
+                {
                     title: '小狗再次去伦敦',
                     start: '2024-01-11'
                 },
-		{
+                {
                     title: '天津大狗',
                     start: '2024-01-25'
                 },
-		{
+                {
                     title: '28岁大狗',
                     start: '2024-03-13'
                 },
-		{
+                {
                     title: '挪威极光小狗',
                     start: '2024-03-21'
                 },
-		{
+                {
                     title: '狗狗之家成立一周年',
                     start: '2024-03-25'
                 },
-		{
+                {
                     title: '想大狗的第6个月',
                     start: '2024-03-27'
                 }
@@ -424,6 +435,9 @@
         calendar.render();
     });
 </script>
+
+</body>
+</html>
 
 
 
