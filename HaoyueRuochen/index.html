@@ -172,9 +172,6 @@
 		    <p class="text-dark">“拉拉和大腚的诞生！”  2023.08.11</p>
 			<hr style="color: pink;">
                     <p class="text-dark">酥酥的小狗伦敦历险记：https://www.kdocs.cn/l/crkYJrSHX1W2?from=docs  2023.10.09</p>
-			<hr style="color: pink;">
-		    <p class="text-dark">“嗯~~~？嗯~~~！”  2024.03.31</p>
-			<hr style="color: pink;">
                 </div>
             </div>
         </div>
@@ -184,7 +181,7 @@
         <div class="row">
             <div class="row justify-content-center text-center my-n1">
                 <div class="col-lg-6">
-			<h1 class="text-primary text-gradient" style="font-size: 3rem; color: #c299cd;">Love Calendar</h1>
+			<h1 class="text-primary text-gradient" style="font-size: 3rem; color: pink;">Love Calendar</h1>
                 </div>
             </div>
         </div>
@@ -349,19 +346,32 @@
     }
 </script>
 
-
 <script type="text/javascript">
+    // countto
+    const date1 = new Date("03/25/2023");
+    const date2 = new Date();
+    const Difference_In_Time = date2.getTime()-date1.getTime();
+    let Difference_In_Days = 0;
+    if (Difference_In_Time>0)
+        Difference_In_Days=Math.ceil(Difference_In_Time / (1000 * 3600 * 24));
+
+    if (document.getElementById('state1')) {
+        document.getElementById("state1").setAttribute("countTo",Difference_In_Days.toString());
+        document.getElementById("state1").innerHTML=Difference_In_Days.toString();
+        const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
+        if (!countUp.error) {
+            countUp.start();
+        } else {
+            console.error(countUp.error);
+        }
+    }
+
     // calendar
     document.addEventListener('DOMContentLoaded', function () {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
             plugins: ['interaction', 'dayGrid'],
-            defaultView: 'dayGridMonth', // 默认以月视图显示
-            header: {
-                left: 'prev,next today', // 左侧导航控件：前一月、后一月、今天
-                center: 'title', // 居中显示标题
-                right: 'dayGridMonth,timeGridWeek,timeGridDay' // 右侧视图切换控件：月视图、周视图、日视图
-            },
+            defaultDate: '2024-01',
             events: [
                 {
                     title: '初识',
@@ -564,18 +574,6 @@
                     start: '2024-01-11'
                 },
 		{
-                    title: '天津大狗',
-                    start: '2024-01-25'
-                },
-		{
-                    title: '28岁大狗',
-                    start: '2024-03-13'
-                },
-		{
-                    title: '挪威极光小狗',
-                    start: '2024-03-21'
-                },
-		{
                     title: '狗狗之家成立一周年',
                     start: '2024-03-25'
                 },
@@ -588,89 +586,6 @@
         calendar.render();
     });
 </script>
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.5">
-<title>茶茶与酥酥的运动小窝</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        color: #c299cd;
-        text-align: center; /* 标题居中 */
-    }
-
-    table {
-        width: 80%;
-        max-width: 900px;
-        margin: 20px auto;
-        border-collapse: collapse;
-    }
-
-    th, td {
-        border: 1px solid #d3d3d3; /* 浅灰色表格底框 */
-        padding: 8px;
-        text-align: center;
-    }
-
-    th {
-        background-color: #f2f2f2;
-    }
-</style>
-</head>
-<body>
-
-<h1 class="text-primary text-gradient" style="font-size: 3rem; color: #c299cd;">茶茶与酥酥的运动小窝</h1>
-
-<table>
-    <thead>
-        <tr>
-            <th rowspan="2">🐶</th> <!-- 合并第一列的第一和第二个网格，并添加狗狗emoji -->
-            <th colspan="7">3.25-3.31</th>
-        </tr>
-        <tr>
-            <th>Mon</th>
-            <th>Tue</th>
-            <th>Wed</th>
-            <th>Thu</th>
-            <th>Fri</th>
-            <th>Sat</th>
-            <th>Sun</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th>茶茶</th>
-            <td>懒狗</td>
-            <td>懒狗</td>
-            <td>懒狗</td>
-            <td>懒狗</td>
-            <td>已动！</td>
-            <td>已动！</td>
-            <td>加油，我是热情小狗爱运动！</td>
-        </tr>
-        <tr>
-            <th>酥酥</th>
-            <td>懒狗</td>
-            <td>懒狗</td>
-            <td>懒狗</td>
-            <td>懒狗</td>
-            <td>懒狗</td>
-            <td>懒狗</td>
-            <td>在小狗的勉励下快乐动动！</td>
-        </tr>
-    </tbody>
-</table>
-
-</body>
-</html>
-
-
-
 
 
 	
