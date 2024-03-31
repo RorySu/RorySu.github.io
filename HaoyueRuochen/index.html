@@ -602,53 +602,79 @@
     });
 </script>
 
+
+
+
 	<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>运动记录</title>
-  <style>
-    table {
-      width: 100%;
-      border-collapse: collapse;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>茶茶和酥酥的运动记录</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/main.min.css" rel="stylesheet">
+<style>
+    #calendar {
+        max-width: 900px;
+        margin: 0 auto;
     }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: center;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-  </style>
+</style>
 </head>
 <body>
 
-<h2>健康狗窝打造记录</h2>
+<h2>茶茶和酥酥的运动记录（从4月1日到7月31日）</h2>
 
-<table>
-  <tr>
-    <th>周次</th>
-    <th>茶茶</th>
-    <th>酥酥</th>
-  </tr>
-  <tr>
-    <td>3.25-3.31</td>
-    <td><input type="checkbox"></td>
-    <td><input type="checkbox"></td>
-  </tr>
-  <tr>
-    <td>4.1-4.7</td>
-    <td><input type="checkbox"></td>
-    <td><input type="checkbox"></td>
-  </tr>
-  <!-- 可以添加更多的行来记录更多的周数 -->
-</table>
+<div id="calendar"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/main.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            events: generateEvents(),
+            eventContent: function(arg) {
+                var content = '';
+                if (arg.event.extendedProps.tea) {
+                    content += '<div>茶茶：✔️</div>';
+                } else {
+                    content += '<div>茶茶：❌</div>';
+                }
+                if (arg.event.extendedProps.sue) {
+                    content += '<div>酥酥：✔️</div>';
+                } else {
+                    content += '<div>酥酥：❌</div>';
+                }
+                return { html: content };
+            }
+        });
+        calendar.render();
+    });
+
+    function generateEvents() {
+        var events = [];
+        var startDate = moment('2024-04-01');
+        var endDate = moment('2024-07-31');
+        var currentDate = startDate.clone();
+
+        while (currentDate <= endDate) {
+            events.push({
+                start: currentDate.format('YYYY-MM-DD'),
+                allDay: true,
+                extendedProps: {
+                    tea: false,
+                    sue: false
+                }
+            });
+            currentDate.add(1, 'day');
+        }
+
+        return events;
+    }
+</script>
 
 </body>
 </html>
-
 
 
 	
