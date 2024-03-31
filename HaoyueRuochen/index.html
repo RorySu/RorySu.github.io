@@ -349,32 +349,19 @@
     }
 </script>
 
+
 <script type="text/javascript">
-    // countto
-    const date1 = new Date("03/25/2023");
-    const date2 = new Date();
-    const Difference_In_Time = date2.getTime()-date1.getTime();
-    let Difference_In_Days = 0;
-    if (Difference_In_Time>0)
-        Difference_In_Days=Math.ceil(Difference_In_Time / (1000 * 3600 * 24));
-
-    if (document.getElementById('state1')) {
-        document.getElementById("state1").setAttribute("countTo",Difference_In_Days.toString());
-        document.getElementById("state1").innerHTML=Difference_In_Days.toString();
-        const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
-        if (!countUp.error) {
-            countUp.start();
-        } else {
-            console.error(countUp.error);
-        }
-    }
-
     // calendar
     document.addEventListener('DOMContentLoaded', function () {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
             plugins: ['interaction', 'dayGrid'],
-            defaultDate: '2024-01',
+            defaultView: 'dayGridMonth', // 默认以月视图显示
+            header: {
+                left: 'prev,next today', // 左侧导航控件：前一月、后一月、今天
+                center: 'title', // 居中显示标题
+                right: 'dayGridMonth,timeGridWeek,timeGridDay' // 右侧视图切换控件：月视图、周视图、日视图
+            },
             events: [
                 {
                     title: '初识',
