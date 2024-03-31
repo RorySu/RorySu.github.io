@@ -609,72 +609,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>茶茶和酥酥的运动记录</title>
+<title>狗狗小窝的运动健康</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/main.min.css" rel="stylesheet">
 <style>
-    #calendar {
-        width: 80%; /* 设置日历宽度为页面宽度的80% */
+    table {
+        width: 80%;
         max-width: 900px;
-        margin: 0 auto;
+        margin: 20px auto;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+    th {
+        background-color: #f2f2f2;
     }
 </style>
 </head>
 <body>
 
-<h2>茶茶和酥酥的运动记录（从4月1日到7月31日）</h2>
+<h2>茶茶和酥酥的运动记录（3.25-3.31）</h2>
 
-<div id="calendar"></div>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th colspan="7">日期</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>茶茶</th>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <th>酥酥</th>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+        </tr>
+    </tbody>
+</table>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/main.min.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
-            events: generateEvents(),
-            eventContent: function(arg) {
-                var content = '';
-                if (arg.event.extendedProps.tea) {
-                    content += '<div>茶茶：✔️</div>';
-                } else {
-                    content += '<div>茶茶：❌</div>';
-                }
-                if (arg.event.extendedProps.sue) {
-                    content += '<div>酥酥：✔️</div>';
-                } else {
-                    content += '<div>酥酥：❌</div>';
-                }
-                return { html: content };
-            }
-        });
-        calendar.render();
-    });
+<h2>茶茶和酥酥的运动记录（4.1-4.7）</h2>
 
-    function generateEvents() {
-        var events = [];
-        var startDate = moment('2024-04-01');
-        var endDate = moment('2024-07-31');
-        var currentDate = startDate.clone();
-
-        while (currentDate <= endDate) {
-            events.push({
-                start: currentDate.format('YYYY-MM-DD'),
-                allDay: true,
-                extendedProps: {
-                    tea: false,
-                    sue: false
-                }
-            });
-            currentDate.add(1, 'day');
-        }
-
-        return events;
-    }
-</script>
-
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th colspan="7">日期</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>茶茶</th>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <th>酥酥</th>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+        </tr>
+    </tbody>
+</table>
+	
 </body>
 </html>
+
 
 
 	
