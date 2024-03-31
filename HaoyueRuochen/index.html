@@ -180,7 +180,7 @@
         </div>
     </div>
 
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -208,7 +208,7 @@
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
             plugins: ['interaction', 'dayGrid'],
-            defaultDate: '2024-01-01', // 默认日期改为 2024 年 1 月 1 日
+            defaultDate: today, // 默认日期改为开网页的日期
             events: [
                 {
                     title: '初识',
@@ -438,6 +438,7 @@
 
 </body>
 </html>
+
 
 
 
