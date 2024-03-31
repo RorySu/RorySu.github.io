@@ -189,7 +189,7 @@
 <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.min.css" rel="stylesheet">
 </head>
 <body>
-
+<div id="calendar"></div> 
 <div class="container">
     <div class="row">
         <div class="row justify-content-center text-center my-n1">
@@ -204,12 +204,13 @@
 
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.min.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            plugins: ['interaction', 'dayGrid'],
-            defaultDate: today, // 默认日期改为开网页的日期
-            events: [
+	var today = new Date();
+document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        plugins: ['interaction', 'dayGrid'],
+        defaultDate: today,
+        events: [
                 {
                     title: '初识',
                     start: '2021-12-01'
