@@ -94,6 +94,65 @@
     </div>
 </section>
 
+<section class="my-1 py-1" id="countdown_section">
+    <div class="container mt-sm-5 mt-3" style="padding-top: 1rem;"> 
+	    <!--padding-top表顶部内间距，m调节色块大小，radius表圆角大小，shadow表阴影-->
+        <div class="bg-gradient-primary position-relative m-3 border-radius-xl shadow-lg">
+            <div class="container pb-lg-8 pb-5 pt-5 postion-relative z-index-2 position-relative">
+                <div class="row">
+                    <div class="col-md-7 mx-auto">
+                        <h3 class="text-white" style="text-align: center">距离特别日子还有</h3>
+                        <div id="countdown" class="text-white" style="font-size: 24px; text-align: center;"></div>
+                        <p class="text-white" style="text-align: center;">7月14日</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="my-1 py-1" id="countdown_section">
+    <div class="container mt-sm-5 mt-3" style="padding-top: 1rem;"> 
+	    <!--padding-top表顶部内间距，m调节色块大小，radius表圆角大小，shadow表阴影-->
+        <div class="bg-gradient-primary position-relative m-3 border-radius-xl shadow-lg">
+            <div class="container pb-lg-8 pb-5 pt-5 postion-relative z-index-2 position-relative">
+                <div class="row">
+                    <div class="col-md-7 mx-auto">
+                        <h3 class="text-white" style="text-align: center">距离见面还有</h3>
+                        <div id="countdown" class="text-white" style="font-size: 36px; text-align: center;"></div>
+                        <p class="text-white" style="text-align: center;">7月14日</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// 目标日期（7月14日）
+var targetDate = new Date('2024-07-14T00:00:00');
+
+function countdown() {
+    var now = new Date();
+    // 计算当前时间与目标日期的时间差
+    var difference = targetDate - now;
+
+    // 计算剩余天数，使用 Math.ceil() 向上取整，确保天数正确显示
+    var days = Math.ceil(difference / (1000 * 60 * 60 * 24));
+
+    // 在页面上显示剩余天数
+    document.getElementById('countdown').innerHTML = days + ' 天';
+}
+
+// 每秒更新一次倒计时
+setInterval(countdown, 1000);
+
+// 页面加载时初始化倒计时
+countdown();
+</script>
+
+
+	
 <section class="my-1 py-1" id="calendar_photos">
     <div class="container mt-sm-5 mt-3" style="padding-top: 1 rem;"> 
 	    <!--padding-top表顶部内间距，m调节色块大小，radius表圆角大小，shadow表阴影-->
