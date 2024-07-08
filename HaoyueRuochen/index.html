@@ -465,13 +465,13 @@ countdown();
     }
 
     // calendar
-    const todalCal = new Date();
+    const isoDate = date2.toISOString();
+    const dateStr = isoDate.substring(0, 7);
     document.addEventListener('DOMContentLoaded', function () {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
             plugins: ['interaction', 'dayGrid'],
-	    // defaultDate: 'yearCal'.'monthCal',
-	    calendar.defaultDate = todayCal,
+	    defaultDate: dateStr,
             events: [
                 {
                     title: '初识',
